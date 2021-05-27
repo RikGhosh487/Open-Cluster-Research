@@ -68,7 +68,7 @@ def main():
                     paramy=dict(name='dec', axis='\u03b4 (deg)'), dimensions=600,
                     title='Structure of Open Cluster (based on ICRS)', sequence='tealgrn', display=False)
 
-    # parallax stat data + hardcoded info
+    # parallax stat data
     meanp = np.mean(df['parallax'])
     stdp = np.std(df['parallax'])
     
