@@ -8,8 +8,8 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Declination (δ) | 11.093 |
 | Parallax Data Retention | 7.96% |
 | Raw Data Count | 7717 |
-| Refined Data Count | 470 |
-| Data Retention | 15.79% |
+| Refined Data Count | 708 |
+| Data Retention | 9.17% |
 
 ### Packages and Tools
 - [Pandas](https://pandas.pydata.org/) - `v 1.2.4`
