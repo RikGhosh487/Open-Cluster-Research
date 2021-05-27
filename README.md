@@ -6,8 +6,8 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | :--: | :--: |
 | Right Ascension (α) | 235.486 |
 | Declination (δ) | 11.093 |
-| Parallax Data Retention | 13.5% |
-| Raw Data Count | 2975 |
+| Parallax Data Retention | 7.96% |
+| Raw Data Count | 7717 |
 | Refined Data Count | 470 |
 | Data Retention | 15.79% |
 

@@ -16,6 +16,7 @@ def get_color_kde(dataframe):
     dataframe['color'] = color
     return dataframe
 
+# Generates scatterplot from the given parameters
 def get_scatterplot(dataframe, paramx, paramy, dimensions, title='Scatterplot',
                     sequence='magma', display=False, reverse=False):
     if(display):
@@ -31,6 +32,14 @@ def get_scatterplot(dataframe, paramx, paramy, dimensions, title='Scatterplot',
                             yaxis=dict(autorange='reversed'))
         else:
             fig.update_layout(height=dimensions, width=dimensions, autosize=False, plot_bgcolor=BG_COLOR)
+        fig.show()
+
+# Generates histogram from the given parameters
+def get_histogram(dataframe, param, dimensions, title='Histogram', marginal='rug', display=False):
+    if(display):
+        fig = px.histogram(data_frame=dataframe, x=param['name'], opacity=OPACITY, title=title,
+                           marginal=marginal, labels={ param['name']: param['axis']})
+        fig.update_layout(autosize=False, plot_bgcolor=BG_COLOR)
         fig.show()
 
 def main():
@@ -53,37 +62,25 @@ def main():
     # produces scatterplot for raw data with hard-coded data reductions
     get_scatterplot(dataframe=df, paramx=dict(name='pmra', axis='\u03bc \u03b1 (mas/year)'),
                     paramy=dict(name='pmdec', axis='\u03bc \u03b4 (mas/year)'), dimensions=550,
-                    title='Vector Point Diagram (Density Graph)', sequence='tealgrn', display=True)
+                    title='Vector Point Diagram (Density Graph)', sequence='tealgrn', display=False)
+    
+    get_scatterplot(dataframe=df, paramx=dict(name='ra', axis='\u03b1 (deg)'),
+                    paramy=dict(name='dec', axis='\u03b4 (deg)'), dimensions=600,
+                    title='Structure of Open Cluster (based on ICRS)', sequence='tealgrn', display=False)
 
-    # parallax stat data
+    # parallax stat data + hardcoded info
     meanp = np.mean(df['parallax'])
     stdp = np.std(df['parallax'])
     
-    '''
-    # Raw Histogram
-    fig2 = px.histogram(df, x='parallax', opacity=0.8, title='Parallax Histogram',
-                        marginal='rug',
-                        labels={
-                            'parallax': '\u03d6 (mas)'
-                        })
-    fig2.update_layout(autosize=False, plot_bgcolor='rgb(50,50,50)')
-    fig2.show()
-    # '''
+    get_histogram(dataframe=df, param=dict(name='parallax', axis='\u03d6 (mas)'), dimensions=550,
+                  title='Parallax Histogram', marginal='box', display=False)
     
-    # data reductions for histogram
-    df = df[df['parallax'] >= meanp - 0.17 * stdp]
-    df = df[df['parallax'] <= meanp + 0.17 * stdp]
+    # data reductions for histogram (7.96%)
+    df = df[df['parallax'] >= meanp - 0.10 * stdp]
+    df = df[df['parallax'] <= meanp + 0.10 * stdp]
 
-    '''
-    # Refined Histogram
-    fig4 = px.histogram(df, x='parallax', opacity=0.8, title='Reduced Parallax Histogram',
-                        marginal='rug',
-                        labels={
-                            'parallax': '\u03d6 (mas)'
-                        })
-    fig4.update_layout(autosize=False, plot_bgcolor='rgb(50,50,50)')
-    fig4.show()
-    # '''
+    get_histogram(dataframe=df, param=dict(name='parallax', axis='\u03d6 (mas)'), dimensions=550,
+                  title='Reduced Parallax Histogram', marginal='box', display=False)
 
     get_scatterplot(dataframe=df, paramx=dict(name='pmra', axis='\u03bc \u03b1 (mas/year)'),
                     paramy=dict(name='pmdec', axis='\u03bc \u03b4 (mas/year)'), dimensions=550,
@@ -94,7 +91,7 @@ def main():
                     title='Structure of Open Cluster (based on ICRS)', sequence='tealgrn', display=False)
 
     get_scatterplot(dataframe=df, paramx=dict(name='bp_rp', axis='BP - RP (mag)'),
-                    paramy=dict(name='phot_g_mean_mag', axis='G (mag)'), dimensions=700,
+                    paramy=dict(name='phot_g_mean_mag', axis='G (mag)'), dimensions=600,
                     title='Color Magnitude Diagram',sequence='tealgrn', display=True, reverse=True)
 
 if __name__ == '__main__':
