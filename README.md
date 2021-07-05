@@ -5,7 +5,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 
 >Vector Point Diagram of the Query region<br />![Vector Point Diagram of region being Queried](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/vector_point_diagram.png)
 
->Parallax Distribution of Queried region<br />![Histogram with box plot for the distribution of Parallaxes for the Queried region](https://github.com/RikGhosh487/blob/Open-Cluster-Research/main/Images/parallax_distribution.png)
+>Parallax Distribution of Queried region<br />![Histogram with box plot for the distribution of Parallaxes for the Queried region](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/parallax_distribution.png)
 
 >Parallax Distrubution after Field Stars are removed<br />![Histogram with box plot for reduced distributio of Parallaxes for the Queried region](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/reduced_parallax_distribution.png)
 
