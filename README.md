@@ -1,7 +1,19 @@
 # Open Cluster Research
 This is the Data Science component of the **Astrometric**, **Photometric**, and **Spectroscopic** analysis of an Open Star Cluster.
 
->Structure of the Query region for Open Cluster <br />![Structure of region being Queried in Galactic Coordinates](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/cluster_in_icrs.png)
+>Structure of the Query region for Open Cluster<br />![Structure of region being Queried in Galactic Coordinates](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/cluster_in_icrs.png)
+
+>Vector Point Diagram of the Query region<br />![Vector Point Diagram of region being Queried](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/vector_point_diagram.png)
+
+>Parallax Distribution of Queried region<br />![Histogram with box plot for the distribution of Parallaxes for the Queried region](https://github.com/RikGhosh487/blob/main/Images/parallax_distribution.png)
+
+>Parallax Distrubution after Field Stars are removed<br />![Histogram with box plot for reduced distributio of Parallaxes for the Queried region](https://github.com/RikGhosh487/blob/main/Images/reduced_parallax_distribution.png)
+
+>Structure of the Query Region after Field Star removal<br />![Structure of Open Cluster queried in Galactic Coordinates](https://github.com/RikGhosh487/blob/main/Images/cluster_in_icrs_post_parallax.png)
+
+>Vector Point Diagram of the Query Region after Field Star removal<br />![Vector Point Diagram of Open Cluster after Field Star removal](https://github.com/RikGhosh487/blob/main/Images/vpd_post_parallax.png)
+
+>Color Magnitude Diagram of Open Cluster<br />![Scatterplot of Color Magnitude for Queried Open Cluster](https://github.com/RikGhosh487/blob/main/Images/cmd.png)
 
 ## Current Data
 | Paramater | Value |
