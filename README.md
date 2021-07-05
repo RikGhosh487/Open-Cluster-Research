@@ -1,6 +1,8 @@
 # Open Cluster Research
 This is the Data Science component of the **Astrometric**, **Photometric**, and **Spectroscopic** analysis of an Open Star Cluster.
 
+>Structure of the Query region for Open Cluster <br />![Structure of region being Queried in Galactic Coordinates](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/cluster_in_icrs.png)
+
 ## Current Data
 | Paramater | Value |
 | :--: | :--: |
