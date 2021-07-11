@@ -34,7 +34,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Poisson Error | 0.06516604238717237 |
 | Average Value | 235.482 ± 0.065 |
 
-**Declination (δ)**
+**Declination (δ)**<br />
 ![Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/dec.png)
 | Statistics | Value |
 | :--: | :--: |
@@ -42,7 +42,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Poisson Error | 0.30037020912563056 |
 | Average Value | 11.084 ± 0.300 |
 
-**Proper Motion in Right Ascension (μα)**
+**Proper Motion in Right Ascension (μα)**<br />
 ![Proper Motion in Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/pmra.png)
 | Statistics | Value |
 | :--: | :--: |
@@ -50,7 +50,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Poisson Error | 0.4241729250792883 |
 | Average Value | -5.558 ± 0.424 |
 
-**Proper Motion in Declination (μδ)**
+**Proper Motion in Declination (μδ)**<br />
 ![Proper Motion in Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/pmdec.png)
 | Statistics | Value |
 | :--: | :--: |
@@ -58,7 +58,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Poisson Error | 0.40419521581039136 |
 | Average Value | -6.121 ± 0.404 |
 
-**Parallax (π)**
+**Parallax (π)**<br />
 ![Parallax Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/parallax.png)
 | Statistics | Value |
 | :--: | :--: |
