@@ -30,6 +30,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 - [NumPy](https://numpy.org/) - `v 1.20.2`
 - [SciPy](https://www.scipy.org/) - `v 1.6.2`
 - [Plotly](https://plotly.com/) - `v 4.14.3`
+- [Matplotlib](https://matplotlib.org) - `v 3.4.2`
 
 ### Source(s)
-- [GAIA Data Release 2](https://sci.esa.int/web/gaia/-/60243-data-release-2)
+- [GAIA Early Data Release 3](https://www.cosmos.esa.int/web/gaia/early-data-release-3)
