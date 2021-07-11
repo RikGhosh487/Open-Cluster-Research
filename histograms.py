@@ -40,7 +40,7 @@ def main():
     # Histograms
     histogram(df, dict(name='ra', axis=r'$\alpha$' + ' (deg)'), 50)
     histogram(df, dict(name='dec', axis=r'$\delta$' + ' (deg)'), 50)
-    histogram(df, dict(name='pmra', axis=r'$\mu_{\alpha*}$' + ' (mas/yr)'), 50)
+    histogram(df, dict(name='pmra', axis=r'$\mu_{\alpha*} cos(\delta)$' + ' (mas/yr)'), 50)
     histogram(df, dict(name='pmdec', axis=r'$\mu_{\delta}$' + ' (mas/yr)'), 50)
     histogram(df, dict(name='parallax', axis=r'$\pi$' + ' (mas)'), 50)
 

@@ -27,14 +27,44 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 
 ## Histograms
 **Right Ascension (α)**
-[Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/ra.png)
+![Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/ra.png)
 | Statistics | Value |
 | :--: | :--: |
 | Mean | 235.48177831737354 |
 | Poisson Error | 0.06516604238717237 |
 | Average Value | 235.482 ± 0.065 |
 
-**Declination**
+**Declination (δ)**
+![Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/dec.png)
+| Statistics | Value |
+| :--: | :--: |
+| Mean | 11.083738890559829 |
+| Poisson Error | 0.30037020912563056 |
+| Average Value | 11.084 ± 0.300 |
+
+**Proper Motion in Right Ascension (μα*)**
+![Proper Motion in Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/pmra.png)
+| Statistics | Value |
+| :--: | :--: |
+| Mean | -5.5579432983169115 |
+| Poisson Error | 0.4241729250792883 |
+| Average Value | -5.558 ± 0.424 |
+
+**Proper Motion in Declination (μδ)**
+![Proper Motion in Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/pmdec.png)
+| Statistics | Value |
+| :--: | :--: |
+| Mean | -6.120933518248045 |
+| Poisson Error | 0.40419521581039136 |
+| Average Value | -6.121 ± 0.404 |
+
+**Parallax (π)**
+![Parallax Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/parallax.png)
+| Statistics | Value |
+| :--: | :--: |
+| Mean | 0.9366727364406575 |
+| Poisson Error | 1.0332515376519116 |
+| Average Value | -0.937 ± 1.033 |
 
 ### Packages and Tools
 - [Pandas](https://pandas.pydata.org/) - `v 1.2.4`
