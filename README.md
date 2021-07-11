@@ -26,7 +26,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Data Retention | 9.17% |
 
 ## Histograms
-**Right Ascension (α)**
+**Right Ascension (α)**<br />
 ![Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/ra.png)
 | Statistics | Value |
 | :--: | :--: |
@@ -42,7 +42,7 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Poisson Error | 0.30037020912563056 |
 | Average Value | 11.084 ± 0.300 |
 
-**Proper Motion in Right Ascension (μα*)**
+**Proper Motion in Right Ascension (μα)**
 ![Proper Motion in Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/pmra.png)
 | Statistics | Value |
 | :--: | :--: |
