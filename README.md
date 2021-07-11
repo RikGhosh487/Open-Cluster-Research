@@ -25,6 +25,17 @@ This is the Data Science component of the **Astrometric**, **Photometric**, and 
 | Refined Data Count | 708 |
 | Data Retention | 9.17% |
 
+## Histograms
+**Right Ascension (α)**
+[Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplotlib/ra.png)
+| Statistics | Value |
+| :--: | :--: |
+| Mean | 235.48177831737354 |
+| Poisson Error | 0.06516604238717237 |
+| Average Value | 235.482 ± 0.065 |
+
+**Declination**
+
 ### Packages and Tools
 - [Pandas](https://pandas.pydata.org/) - `v 1.2.4`
 - [NumPy](https://numpy.org/) - `v 1.20.2`
