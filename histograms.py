@@ -1,8 +1,27 @@
+#!/usr/bin/env python
+
+'''
+histograms.py: Produces matplotlib histograms for major properties of a CSV with a gaussian fitting.
+
+               The Gaussian Fit is scaled up to be superimposed on top of the produced histograms instead
+               of normalizing the histogram to retain the original frequency counts. Matplotlib is used for
+               it TEX support and ability to combine multiple plots
+'''
+
 # imports
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
+
+__author__ = 'Rik Ghosh'
+__copyright__ = 'Copyright 2021, The University of Texas at Austin'
+__credits__ = ['Katherine Clark', 'Soham Saha', 'Mihir Suvarna']
+__license__ = 'MIT'
+__version__ = '1.2.4'
+__maintainer__ = 'Rik Ghosh'
+__email__ = 'rikghosh487@gmail.com'
+__status__ = 'Production'
 
 # function to produce histogram
 def histogram(dataframe, field, bins):
@@ -11,7 +30,7 @@ def histogram(dataframe, field, bins):
     label_name = field['name']
 
     # Generate plot
-    hist, bins, _ = plt.hist(dataframe[field['name']], bins, histtype='step')
+    hist, bins, _ = plt.hist(dataframe[field['name']], bins, histtype='step', label='Counts')
 
     # Statistics for Gaussian Model
     mean = np.mean(dataframe[label_name])
@@ -27,15 +46,8 @@ def histogram(dataframe, field, bins):
     plt.show()
 
 def main():
-    # Reading datafile and dropping missing fields
-    df = pd.read_csv('results.csv').dropna()
-
-    # Statistical Data Reductions
-    df = df[df['pmra_error'] < 1]
-    df = df[df['pmdec_error'] < 1]
-
-    # GAIA Parallax Correction
-    df = df[df['parallax'] >= 0]
+    # Reading datafile
+    df = pd.read_csv('restricted.csv')
 
     # Histograms
     histogram(df, dict(name='ra', axis=r'$\alpha$' + ' (deg)'), 50)
