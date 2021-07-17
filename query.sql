@@ -8,5 +8,5 @@ FROM gaiaedr3.gaia_source
 WHERE 
 CONTAINS(
 	POINT('ICRS',gaiaedr3.gaia_source.ra,gaiaedr3.gaia_source.dec),
-	CIRCLE('ICRS', 235.486, 11.093, 0.5)
+	CIRCLE('ICRS', 345.67348, 59.55911, 0.1)
 )=1  AND  (gaiaedr3.gaia_source.parallax_error<=0.999999)
