@@ -24,7 +24,7 @@ There were **2923** data points in [raw_data.csv](https://github.com/RikGhosh487
 | Average | 345.674 ± 0.004 |
 
 **Declination (δ)**<br />
-![Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplot/dec.png)
+![Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/dec.png)
 | Statistics | Value |
 | :--: | :--: |
 | Mean | 59.560271106232854 |
@@ -33,7 +33,7 @@ There were **2923** data points in [raw_data.csv](https://github.com/RikGhosh487
 | Average | 59.560 ± 0.002 |
 
 **Proper Motion in Right Ascension (μα)**<br />
-![Proper Motion in Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplot/pmra.png)
+![Proper Motion in Right Ascension Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/pmra.png)
 | Statistics | Value |
 | :--: | :--: |
 | Mean | -2.256758586451548 |
@@ -42,7 +42,7 @@ There were **2923** data points in [raw_data.csv](https://github.com/RikGhosh487
 | Average | -2.257 ± 0.110 |
 
 **Proper Motion in Declination (μδ)**<br />
-![Proper Motion in Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplot/pmdec.png)
+![Proper Motion in Declination Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/pmdec.png)
 | Statistics | Value |
 | :--: | :--: |
 | Mean | -1.6124507799916195 |
@@ -51,7 +51,7 @@ There were **2923** data points in [raw_data.csv](https://github.com/RikGhosh487
 | Average | -1.612 ± 0.078 |
 
 **Parallax (π)**<br />
-![Parallax Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/Images/matplot/parallax.png)
+![Parallax Histogram](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/parallax.png)
 | Statistics | Value |
 | :--: | :--: |
 | Mean | 0.48761751988505464 |
