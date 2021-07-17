@@ -18,8 +18,7 @@ __license__ = 'MIT'
 __version__ = '1.0.1'
 __maintainer__ = 'Rik Ghosh'
 __email__ = 'rikghosh487@gmail.com'
-__status__ = 'Development'
-
+__status__ = 'Production'
 
 def main():
     # read the CSV and drop missing fields
@@ -36,4 +35,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
