@@ -5,7 +5,7 @@ histograms.py: Produces matplotlib histograms for major properties of a CSV with
 
                The Gaussian Fit is scaled up to be superimposed on top of the produced histograms instead
                of normalizing the histogram to retain the original frequency counts. Matplotlib is used for
-               it TEX support and ability to combine multiple plots
+               its TEX support and ability to combine multiple plots
 '''
 
 # imports
