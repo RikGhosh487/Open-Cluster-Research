@@ -24,7 +24,7 @@ __author__ = 'Rik Ghosh'
 __copyright__ = 'Copyright 2021, The University of Texas at Austin'
 __credits__ = ['Katherine Clark', 'Soham Saha', 'Mihir Suvarna']
 __license__ = 'MIT'
-__version__ = '1.5.2'
+__version__ = '1.5.3'
 __maintainer__ = 'Rik Ghosh'
 __email__ = 'rikghosh487@gmail.com'
 __status__ = 'Production'
@@ -123,7 +123,7 @@ def main():
     df = pd.read_csv('restricted.csv')
 
     # mst generation
-    START_ID = 2013612614065722624  # source_id of data point closest to mean PMRA and mean PMDEC
+    START_ID = 2013565369415747456  # source_id of data point closest to mean PMRA and mean PMDEC
     gr = graph_weight(df)  # get weighted graph
     normx, normlen, _ = spanning_tree(gr, START_ID, True)
 
