@@ -36,4 +36,4 @@ WHERE
 CONTAINS(
 	POINT('ICRS', gaiaedr3.gaia_source.ra, gaiaedr3.gaia_source.dec),
 	CIRCLE('ICRS', 345.67348, 59.55911, 0.16666666666667)
-)=1  AND  (gaiaedr3.gaia_source.parallax_error<=0.999999)
+)=1  AND  (gaiaedr3.gaia_source.parallax_error < 1)
