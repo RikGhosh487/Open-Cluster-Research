@@ -4,8 +4,9 @@
 data_reduction.py: Takes a CSV file and extracts a new CSV with statistical data reductions and adjustments.
                    
                    Pandas is used to read a CSV into a dataframe. The dataframe is reduced so that all the
-                   elements have a pmra_error < 1, pmdec_error < 1, and parallax >= 0. Pandas is again used to 
-                   convert the reduced dataframe to a CSV named reduced.csv
+                   elements have a pmra_error < 1, pmdec_error < 1, ra_error < 1, dec_error < 1, and
+                   parallax_error < 1. Pandas is again used to convert the reduced dataframe to a CSV named
+                   reduced.csv
 '''
 
 # imports
@@ -15,7 +16,7 @@ __author__ = 'Rik Ghosh'
 __copyright__ = 'Copyright 2021, The University of Texas at Austin'
 __credits__ = ['Katherine Clark', 'Soham Saha', 'Mihir Suvarna']
 __license__ = 'MIT'
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 __maintainer__ = 'Rik Ghosh'
 __email__ = 'rikghosh487@gmail.com'
 __status__ = 'Production'
@@ -26,9 +27,8 @@ def main():
 
     # statistical data reductions
     df = df[(df['pmra_error'] < 1) & (df['pmdec_error'] < 1)]
-    
-    # GAIA parallax adjustment
-    df = df[df['parallax'] >= 0]
+    df = df[(df['ra_error'] < 1) & (df['dec_error'] < 1)]
+    df = df[df['parallax_error'] < 1]
 
     # new CSV with row indices being ignored
     df.to_csv('reduced.csv', index=False)
