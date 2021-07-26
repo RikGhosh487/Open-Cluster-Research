@@ -138,8 +138,8 @@ def main():
     hull = ConvexHull(s)
     plt.scatter(x, y, c=z, marker='.') # plotting
     plt.plot(np.mean(x), np.mean(y), 'r*', label='Mean')
-    plt.xlabel(r'$\mu_{alpha} cos(\delta)$ (mas/yr)')
-    plt.ylabel(r'$\mu_{delta}$ (mas/yr)')
+    plt.xlabel(r'$\mu_{\alpha} cos(\delta)$ (mas/yr)')
+    plt.ylabel(r'$\mu_{\delta}$ (mas/yr)')
     for simplex in hull.simplices:
         plt.plot(s[simplex, 0], s[simplex, 1], 'k-')
     plt.legend(loc='best')

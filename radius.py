@@ -155,7 +155,7 @@ def main():
     plt.axhline(eta_max - 3 * s, color='r', linestyle='--', label='Selection Threshold')
     plt.legend(loc='best')
     plt.xlabel(r'$R_s$' + ' (arcmin)')
-    plt.ylabel(r'$\eta_{max}$' + ' (deg)')
+    plt.ylabel(r'$\eta_{max}$')
     plt.title('Transition Parameter per Cluster Radii')
     plt.show()
 
