@@ -3,7 +3,7 @@
 	@copyright: Copyright 2021, University of Texas at Austin
 	@credits: Soham Saha, Katherine Clark, Mihir Suvarna
 	@license: MIT
-	@version: 1.0.3
+	@version: 1.0.4
 	@maintainer: Rik Ghosh
 	@email: rikghosh487@gmail.com
 	@status: production
@@ -26,14 +26,12 @@ gaia_source.parallax_pmra_corr, -- datatype: float
 gaia_source.parallax_pmdec_corr, -- datatype: float
 gaia_source.pmra_pmdec_corr, -- datatype: float
 gaia_source.phot_g_mean_mag, -- unit: mag, datatype: float
-gaia_source.bp_rp, -- unit: mag, datatype: float
-gaia_source.dr2_radial_velocity, -- unit: km/s, datatype: float
-gaia_source.dr2_radial_velocity_error -- unit: km/s, datatype: float
+gaia_source.bp_rp -- unit: mag, datatype: float
 
 FROM gaiaedr3.gaia_source
 
 WHERE 
 CONTAINS(
 	POINT('ICRS', gaiaedr3.gaia_source.ra, gaiaedr3.gaia_source.dec),
-	CIRCLE('ICRS', 345.67348, 59.55911, 0.16666666666667)
+	CIRCLE('ICRS', 345.67348, 59.55911, 0.3333333333333333333333333)
 )=1  AND  (gaiaedr3.gaia_source.parallax >= 0 AND gaiaedr3.gaia_source.parallax_error < 1)

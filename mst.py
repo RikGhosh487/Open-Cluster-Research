@@ -17,24 +17,23 @@ import matplotlib.pyplot as plt
 import heapq as hq
 from collections import defaultdict
 from math import sqrt, atan, pi
-from scipy.signal import argrelextrema
 from sklearn.linear_model import LinearRegression
 
 __author__ = 'Rik Ghosh'
 __copyright__ = 'Copyright 2021, The University of Texas at Austin'
 __credits__ = ['Katherine Clark', 'Soham Saha', 'Mihir Suvarna']
 __license__ = 'MIT'
-__version__ = '1.5.3'
+__version__ = '1.5.4'
 __maintainer__ = 'Rik Ghosh'
 __email__ = 'rikghosh487@gmail.com'
 __status__ = 'Production'
 
-# full scope constants
+# globals
 NT = r'$N_t$'
 
 # assigns weight to each element in order to make a weighted graph data structure
 def graph_weight(dataframe):
-    graph = {}
+    graph = dict()
     pmra = np.array(dataframe['pmra'])
     pmdec = np.array(dataframe['pmdec'])
     ids = np.array(dataframe['source_id'])
@@ -83,7 +82,7 @@ def spanning_tree(graph, starting_vertex, display, mins=0):
     
     # display graph if requested
     if(display):
-        plt.plot(x, avglen, 'r--', label='Average length of MST edges per iteration')
+        plt.plot(x, avglen, 'r--', label='Average length of MST edges per Iteration')
         plt.xlabel(NT)
         plt.ylabel(r'$L_t$')
         plt.legend(loc='best')
@@ -96,9 +95,9 @@ def spanning_tree(graph, starting_vertex, display, mins=0):
 
 # determines the inclination angles of left-sided and right-sided lines of best fit to locate transition points
 def inclination_angle(nmin, xvals, yvals):
-    vals = []
-    cangle = []
-    fangle = []
+    vals = list()
+    cangle = list()
+    fangle = list()
     model = LinearRegression()
 
     # span all possible points where Nmin < Nt < Ndat - Nmin
@@ -118,12 +117,16 @@ def inclination_angle(nmin, xvals, yvals):
     
     return (vals, cangle, fangle)
 
+# main function
 def main():
-    # reading datafile and dropping missing fields
-    df = pd.read_csv('restricted.csv')
+    # constants
+    FILENAME = './csv/stat_adj.csv'
+
+    # dataframe
+    df = pd.read_csv(FILENAME)
 
     # mst generation
-    START_ID = 2013565369415747456  # source_id of data point closest to mean PMRA and mean PMDEC
+    START_ID = 2013610376379103104  # source_id of data point closest to mean PMRA and mean PMDEC
     gr = graph_weight(df)  # get weighted graph
     normx, normlen, _ = spanning_tree(gr, START_ID, True)
 
@@ -133,8 +136,8 @@ def main():
     xvals, cluster, field = inclination_angle(nmin, normx, normlen)
 
     # Inclination Plot
-    plt.plot(xvals, cluster, 'b-', label=r'Cluster Angle $\alpha_c$')
-    plt.plot(xvals, field, 'r--', label=r'Field Angle $\alpha_f$')
+    plt.plot(xvals, cluster, 'b-', label=r'Cluster Angle ($\alpha_c$)')
+    plt.plot(xvals, field, 'r--', label=r'Field Angle ($\alpha_f$)')
     plt.plot(xvals, np.zeros_like(xvals), 'c--')
     plt.xlabel(NT)
     plt.ylabel(r'$\alpha$ (deg)')
@@ -145,7 +148,7 @@ def main():
     # Dimensionless Transition Parameter
     ALPHA_MAX = 90
     DELTA = 0.01 * ALPHA_MAX
-    transition = []
+    transition = list()
 
     # calculate transition parameter at each point
     for i in range(len(cluster)):
@@ -155,6 +158,7 @@ def main():
     index = transition.index(max(transition))
     xmax = xvals[index]
 
+    # plotting
     plt.plot(xvals, transition, 'r-', label='Transition Parameter Value')
     plt.plot(xvals, np.zeros_like(xvals), 'b--')
     plt.plot(xmax, transition[index], 'x', label='Transition Point')
@@ -165,9 +169,9 @@ def main():
     plt.show()
 
     _, _, mems = spanning_tree(gr, START_ID, False, xmax)
-    data = pd.read_csv('restricted.csv', index_col='source_id')
-    bprp = []
-    g = []
+    data = pd.read_csv(FILENAME, index_col='source_id')
+    bprp = list()
+    g = list()
     for elem in mems:
         bprp.append(data.loc[elem]['bp_rp'])
         g.append(data.loc[elem]['phot_g_mean_mag'])
@@ -181,7 +185,7 @@ def main():
     plt.show()
 
     df2 = df[df['source_id'].isin(mems)]
-    df2.to_csv('vpd_adjust.csv', index=False)
+    df2.to_csv('./csv/vpd_adj.csv', index=False)
 
 if __name__ == '__main__':
     main()
