@@ -59,6 +59,17 @@ There were **23117** data points in [raw_data.csv](https://github.com/RikGhosh48
 | Margin of Error | 0.00484741986147604 |
 | Average | 0.244 ± 0.005 |
 
+## Spectroscopic Data
+The **ugriz** filters in the SDSS database record the *Balmer Jump* and can be used to obtain spectroscopic information through a photometric estimation. A Machine Learning module is used to train and then test the data with existing spectroscopic information. Then, the paired data for the cluster in focus is fed into the model, which produces the best *Photometric Approximation* to the missing Spectroscopic data. The training data has **139555** data points with **ugriz** filters and spectroscopic data such as **Metallicity**. The [segue.csv](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/csv/segue.csv) file, containing the training data, is split into the train test models for the *Random Forest Regressor* to use on a `80% train - 20% test` ratio.
+
+**Metallicity ([Fe/H])**<br />
+![Metallicity Truth-to-Predicted Scatterplot](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/feh.png)
+| Statistics | Value |
+| :--: | :--: |
+| Root Mean Square Error | 0.0828 |
+| Catastrophic Prediction Error Rate | 0.0275 |
+| Cluster Metallicity Value | -0.583106 |
+
 ### Packages and Tools
 - [Pandas](https://pandas.pydata.org/) - `v 1.2.4`
 - [NumPy](https://numpy.org/) - `v 1.20.2`
@@ -67,4 +78,6 @@ There were **23117** data points in [raw_data.csv](https://github.com/RikGhosh48
 - [Scikit-Learn](https://scikit-learn.org/stable/) - `v 0.24.2`
 
 ### Source(s)
-- [GAIA Early Data Release 3](https://www.cosmos.esa.int/web/gaia/early-data-release-3)
+- [Global Astrometric Interferometer for Astrophysics (GAIA) Early Data Release 3](https://www.cosmos.esa.int/web/gaia/early-data-release-3)
+- [Sloan Digital Sky Survey Data (SDSS) Release 16](https://www.sdss.org/dr16/)
+- [Sloan Extension for Galactic Understanding and Exploration (SEGUE) 2](http://www.sdss3.org/surveys/segue2.php)
