@@ -60,7 +60,7 @@ There were **23117** data points in [raw_data.csv](https://github.com/RikGhosh48
 | Average | 0.244 ± 0.005 |
 
 ## Spectroscopic Data
-The **ugriz** filters in the SDSS database record the *Balmer Jump* and can be used to obtain spectroscopic information through a photometric estimation. A Machine Learning module is used to train and then test the data with existing spectroscopic information. Then, the paired data for the cluster in focus is fed into the model, which produces the best *Photometric Approximation* to the missing Spectroscopic data. The training data has **139555** data points with **ugriz** filters and spectroscopic data such as **Metallicity**, **Surface Gravity**, and **Effective Temperature**. The [segue.csv](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/csv/segue.csv) file, containing the training data, is split into the train test models for the *Random Forest Regressor* to use on a `80% train - 20% test` ratio.
+The **ugriz** filters in the SDSS database record the *Balmer Jump* and can be used to obtain spectroscopic information through a photometric estimation. A Machine Learning module is used to train and then test the data with existing spectroscopic information. Then, the paired data for the cluster in focus is fed into the model, which produces the best *Photometric Approximation* to the missing Spectroscopic data. The training data has **139555** data points with **ugriz** filters and spectroscopic data such as **Metallicity**. The [segue.csv](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/csv/segue.csv) file, containing the training data, is split into the train test models for the *Random Forest Regressor* to use on a `80% train - 20% test` ratio.
 
 **Metallicity ([Fe/H])**<br />
 ![Metallicity Truth-to-Predicted Scatterplot](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/feh.png)
@@ -69,21 +69,6 @@ The **ugriz** filters in the SDSS database record the *Balmer Jump* and can be u
 | Root Mean Square Error | 0.0828 |
 | Catastrophic Prediction Error Rate | 0.0275 |
 | Cluster Metallicity Value | -0.583106 |
-
-**Surface Gravity (log(g))**<br />
-![Surface Gravity Truth-to-Predicted Scatterplot](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/logg.png)
-| Statistics | Value |
-| :--: | :--: |
-| Root Mean Square Error | 0.1656 |
-| Catastrophic Prediction Error Rate | 0.0164 |
-| Cluster Surface Gravity Value | 3.633988 |
-
-**Effective Temperature (Teff)**<br />
-![Effective Temperature Truth-to-Predicted Scatterplot](https://github.com/RikGhosh487/Open-Cluster-Research/blob/main/images/matplot/teff.png)
-| Statistics | Value |
-| :--: | :--: |
-| Root Mean Square Error | 38803.6722 |
-| Cluster Effective Temperature Value | 5555.706650 |
 
 ### Packages and Tools
 - [Pandas](https://pandas.pydata.org/) - `v 1.2.4`

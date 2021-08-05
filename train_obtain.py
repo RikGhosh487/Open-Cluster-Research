@@ -46,8 +46,6 @@ def main():
 
     # extract y values
     feh = np.array(df['feh'])
-    logg = np.array(df['logg'])
-    teff = np.array(df['teff'])
     df = df.drop(['logg', 'teff', 'feh'], axis='columns')
     
     # photometric estimates
@@ -82,63 +80,6 @@ def main():
     # actual prediction
     y_pred = model.predict(df2)
     print(f'Cluster Metallicity: {np.mean(y_pred)}')
-
-    # photometric estimates
-    x_train, x_test, y_train, y_test = train_test_split(df, logg, test_size=0.2)
-    model = RandomForestRegressor(n_estimators=200)
-    model.fit(x_train, y_train)     # training model
-    y_pred = model.predict(x_test)  # predicting with test data
-
-    # density based coloring
-    xy = np.vstack([y_test, y_pred])
-    z = gaussian_kde(xy)(xy)
-
-    # plotting
-    plt.scatter(y_test, y_pred, c=z, marker='.')
-    plt.plot(y_test, y_test, 'r-', label=LABEL)
-    plt.text(max(y_test) - OFFSET, min(y_pred), f'RMSE: {round(mean_squared_error(y_test, y_pred), 4)}') # RMSE
-    y_pls = [2 * CPE + x for x in y_test]     # CPE lines
-    plt.plot(y_test, y_pls, 'b--', label='-1.50 dex line')
-    plt.plot(y_pls, y_test, 'b--', label='+1.50 dex line')
-    diff = abs(y_pred - y_test)
-    count = 0
-    for elem in diff:
-        if elem > 2 * CPE:
-            count += 1
-    plt.text(max(y_test) - OFFSET, min(y_pred) - OFFSET, f'CPER: {round(count / len(y_test), 4)}') # CPER
-    plt.xlabel(r'$log(g)_{SSPP}$')
-    plt.ylabel(r'$log(g)_{RF}$')
-    plt.legend(loc='best')
-    plt.title(TITLE)
-    plt.show()
-
-    # actual prediction
-    y_pred = model.predict(df2)
-    print(f'Cluster Surface Gravity: {np.mean(y_pred)}')
-
-    # photometric estimates
-    x_train, x_test, y_train, y_test = train_test_split(df, teff, test_size=0.2)
-    model = RandomForestRegressor(n_estimators=250)
-    model.fit(x_train, y_train)     # training model
-    y_pred = model.predict(x_test)  # predicting with test data
-
-    # density based coloring
-    xy = np.vstack([y_test, y_pred])
-    z = gaussian_kde(xy)(xy)
-
-    # plotting
-    plt.scatter(y_test, y_pred, c=z, marker='.')
-    plt.plot(y_test, y_test, 'r-', label=LABEL)
-    plt.text(min(y_test), max(y_pred) - 500, f'RMSE: {round(mean_squared_error(y_test, y_pred), 4)}') # RMSE
-    plt.xlabel(r'$T_{eff}(SSPP)$')
-    plt.ylabel(r'$T_{eff}(RF)$')
-    plt.legend(loc='best')
-    plt.title(TITLE)
-    plt.show()
-
-    # actual prediction
-    y_pred = model.predict(df2)
-    print(f'Cluster Effective Temperature: {np.mean(y_pred)}')
     
 if __name__ == '__main__':
     main()
