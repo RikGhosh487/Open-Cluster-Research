@@ -17,7 +17,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
-from scipy.stats import gaussian_kde
+from scipy.stats import gaussian_kde, norm
 
 __author__ = 'Rik Ghosh'
 __copyright__ = 'Copyright 2021, The University of Texas at Austin'
@@ -75,6 +75,19 @@ def main():
     plt.ylabel(r'$[Fe/H]_{RF}$')
     plt.legend(loc='best')
     plt.title(TITLE)
+    plt.show()
+
+    # histograms
+    delta = y_pred - y_test
+    hist, bins, _ = plt.hist(delta, 100, histtype='step', label='Counts')
+    m = np.mean(delta)
+    s = np.std(delta)
+    p = norm.pdf(bins, m, s)  # generate pdf
+    plt.plot(bins, p / p.sum() * len(delta), 'r--', label='Gaussian Fit')
+    plt.xlabel(r'$[Fe/H]_{photo} - [Fe/H]_{spectro}$')
+    plt.ylabel(r'$Counts$')
+    plt.legend(loc='best')
+    plt.title('Distribution of the differences between the true and derived quantities')
     plt.show()
 
     # actual prediction
